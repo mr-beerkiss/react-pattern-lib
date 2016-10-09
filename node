@@ -1,0 +1,15 @@
+li {
+  margin: 10px; }
+
+.create-box input {
+  height: 20px;
+  width: 200px;
+  margin: 20px; }
+
+.item {
+  font-size: 18px; }
+
+.remove {
+  margin-left: 10px;
+  cursor: pointer;
+  color: #aaa; }
