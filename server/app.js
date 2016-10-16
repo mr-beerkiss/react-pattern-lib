@@ -21,6 +21,8 @@ const app = koa();
 const viewpath = path.join(__dirname, 'views');
 const assetspath = path.join(__dirname, '../public');
 
+const applicationPort = process.env.port || 4000;
+
 react(app, { views: viewpath });
 
 // imports babel runtime for JSX views, warning: live transpiling
@@ -33,6 +35,7 @@ register({
 app.use(staticCache(assetspath));
 
 app.use(route.get('/', index));
+app.use(route.get('/library', library));
 
 function *index() {
   this.render('index', {
@@ -44,5 +47,9 @@ function *index() {
   });
 }
 
-app.listen(3000);
-console.log('server start listen at 3000');
+function *library() {
+  this.render('library');
+}
+
+app.listen(applicationPort);
+console.log(`server start listen at ${applicationPort}`);

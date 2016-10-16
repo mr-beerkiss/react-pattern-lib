@@ -6,8 +6,15 @@ const React = require('react');
 module.exports = class Content extends React.Component {
   constructor(props) {
     super(props);
+
+    let myList = props.list || [
+      'hello koa',
+      'hello react',
+      'hello bluekit'
+    ];
+
     this.state = {
-      list: props.list
+      list: myList
     };
 
     this.add = this.add.bind(this);

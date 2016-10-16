@@ -9,7 +9,8 @@ module.exports = {
     }]
   },
   entry: {
-    list: './shared/js/main'
+    list: './shared/js/main',
+    library: './shared/js/library'
   },
   output: {
     filename: 'public/js/[name].js'

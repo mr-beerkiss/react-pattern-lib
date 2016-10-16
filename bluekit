@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+
+const createBlueKit = require('react-bluekit/lib/createBlueKit').default;
+
+const generator = createBlueKit({
+  baseDir: `${__dirname}/shared/js`,
+  preferNodeRequire: true,
+  paths: [
+    './components'
+  ]
+});
+
+generator();

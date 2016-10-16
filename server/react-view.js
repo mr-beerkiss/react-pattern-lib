@@ -64,9 +64,11 @@ module.exports = function (app, _options) {
       ? internals
       : options.internals;
 
-    const render = internals
-      ? ReactDOMServer.renderToString
-      : ReactDOMServer.renderToStaticMarkup;
+    // const render = internals
+    //   ? ReactDOMServer.renderToString
+    //   : ReactDOMServer.renderToStaticMarkup;
+    const render = ReactDOMServer.renderToStaticMarkup;
+    //const render = ReactDOMServer.renderToString;
 
     let locals = {};
     // merge koa state
